@@ -1,0 +1,9 @@
+<form role="form" {{action create on=submit}}>
+    <div class="form-group">
+        {{input value=title classNames="form-control" placeholder="Enter title"}}
+    </div>
+    <div class="form-group">
+        {{textarea value=description class="form-control" rows="3" placeholder="Enter description"}}
+    </div>
+    <button type="submit" class="btn btn-default">Create Task</button>
+</form>

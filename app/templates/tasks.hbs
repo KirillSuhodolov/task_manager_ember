@@ -1,0 +1,14 @@
+<a href="#" {{action destroyAll}} class="destroy-all">Destroy All Tasks</a>
+<div class="row">
+    <div class="col-md-3">
+        <h4>New Task</h4>
+        {{render 'new'}}
+    </div>
+    {{#each filteredTaskNames}}
+        <div class="col-md-3">
+            <h4>{{humanize-value this}}</h4>
+            {{view 'tasks/collection' selection=this}}
+        </div>
+    {{/each}}
+</div>
+
