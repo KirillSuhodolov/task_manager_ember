@@ -69,7 +69,14 @@ module.exports = function(grunt) {
 
   // Loads task options from `tasks/options/` and `tasks/custom-options`
   // and loads tasks defined in `package.json`
-  var config = _.extend({},
+  var config = _.extend({
+      'gh-pages': {
+          options: {
+              base: 'dist'
+          },
+          src: ['**']
+      }
+      },
     require('load-grunt-config')(grunt, {
         configPath: path.join(__dirname, 'tasks/options'),
         loadGruntTasks: false,
@@ -253,4 +260,5 @@ module.exports = function(grunt) {
   });
 
   grunt.initConfig(config);
+  grunt.loadNpmTasks('grunt-gh-pages');
 };
